@@ -10,14 +10,24 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.hexo.hexo-generate",
+		"onCommand:extension.hexo.hexo-deploy",
+		"onCommand:extension.hexo.hexo-init"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.hexo.hexo-generate",
+				"title": "hexo generate"
+			},
+			{
+				"command": "extension.hexo.hexo-deploy",
+				"title": "hexo deploy"
+			},
+			{
+				"command": "extension.hexo.hexo-init",
+				"title": "hexo init"
 			}
 		]
 	},
@@ -31,5 +41,9 @@
 		"eslint": "^5.13.0",
 		"@types/node": "^10.12.21",
 		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"hexo": "^3.8.0",
+		"hexo-cli": "^1.1.0"
 	}
 }
